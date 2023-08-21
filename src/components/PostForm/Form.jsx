@@ -3,7 +3,7 @@ import './Form.css'
 import {useTelegram} from '../../hooks/useTelegram'
 
 const PostForm = () => {
-    const [date, setDate] = useState('')
+    const [date1, setDate1] = useState('')
     const [country, setCountry] = useState('')
     const [city, setCity] = useState('')
     const [seats, setSeats] = useState('1')
@@ -42,8 +42,8 @@ const PostForm = () => {
         }
     }, [country, city])
 
-    const onChangeDate = (e) => {
-        setDate(e.target.value)
+    const onChangeDate1 = (e) => {
+        setDate1(e.target.value)
     }
 
     const onChangeCountry = (e) => {
@@ -69,7 +69,7 @@ const PostForm = () => {
                 type="date"
                 placeholder={'Дата відправки'}
                 value={date}
-                onChange={onChangeDate}
+                onChange={onChangeDate1}
             />
             <input
                 className={'input'}
