@@ -7,18 +7,19 @@ const Form = () => {
     const [country, setCountry] = useState('')
     const [city, setCity] = useState('')
     const [seats, setSeats] = useState('1')
-    const [info, setInfo] = useState('1')
-    // const [subject, setSubject] = useState('physical')
+    const [info, setInfo] = useState('Введіть додаткову інформацію та побажання до поїздки')
     const {tg} = useTelegram()
 
     const onSendData = useCallback(() => {
         const data ={
+            date,
             country,
             city,
-            // subject
+            seats,
+            info
         }
         tg.sendData(JSON.stringify(data))
-    }, [country, city, subject])
+    }, [date, country, city, seats, info])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -60,10 +61,6 @@ const Form = () => {
         setInfo(e.target.value)
     }
 
-    // const onChangeSubject = (e) => {
-    //     setSubject(e.target.value)
-    // }
-
     return (
         <div className={'form'}>
             <h3>Ввведіть ваші дані</h3>
@@ -102,10 +99,6 @@ const Form = () => {
                 value={info}
                 onChange={onChangeInfo}
             />
-            {/*<select value={subject} onChange={onChangeSubject} className={'select'}>*/}
-            {/*    <option value={'legal'}>Юридична особа</option>*/}
-            {/*    <option value={'physical'}>Фізична особа</option>*/}
-            {/*</select>*/}
         </div>
     )
 }
