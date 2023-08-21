@@ -40,7 +40,7 @@ const Form = () => {
     }, [country, city])
 
     const onChangeDate = (e) => {
-        setCountry(e.target.value)
+        setDate(e.target.value)
     }
 
     const onChangeCountry = (e) => {
