@@ -7,7 +7,7 @@ const Form = () => {
     const [country, setCountry] = useState('')
     const [city, setCity] = useState('')
     const [seats, setSeats] = useState('1')
-    const [info, setInfo] = useState('Введіть додаткову інформацію та побажання до поїздки')
+    const [info, setInfo] = useState('')
     const {tg} = useTelegram()
 
     const onSendData = useCallback(() => {
