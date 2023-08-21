@@ -35,7 +35,7 @@ const PostForm = () => {
     }, [])
 
     useEffect(() => {
-        if (!country || !city || !date || !seats || !info) {
+        if (!country || !city || !date1 || !seats || !info) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
